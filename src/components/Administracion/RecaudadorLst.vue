@@ -1,0 +1,95 @@
+<template>
+  <div>
+    <a-row type="flex">
+      <a-col span="18">
+        <a-select
+          mode="multiple"
+          v-model="entidadObj.recaudadorIdLst"
+          style="width: 100%"
+          placeholder="Seleccione  Socios Estratégicos"
+          :loading="loading"
+        >
+          <a-select-option
+            v-for="item in lstRecaudadores"
+            :key="item.recaudadorId"
+          >
+            <b style="color:#117A65">{{ item.nombre }}</b> {{ item.estado }}
+          </a-select-option>
+        </a-select>
+      </a-col>
+      <a-col span="6">
+        <a-button type="link" @click="abrirRecaudador" icon="plus">
+          Nuevo Socios Estratégicos
+        </a-button>
+      </a-col>
+    </a-row>
+  </div>
+</template>
+<script>
+import Recaudadores from "../../service/Administraciones/Recaudador.service";
+export default {
+  props: {
+    entidadObj: null,
+  },
+  data() {
+    return {
+      /**Recaudadora */
+      lstRecaudadores: [],
+      loading: false,
+    };
+  },
+  mounted() {
+    this.cargarRecaudadores();
+  },
+  methods: {
+    cargarRecaudadores() {
+      this.$Progress.start();
+      this.loading = true;
+      Recaudadores.getLstRecaudadores()
+        .then((r) => {
+          if (r.status === 204) {
+            (this.lstRecaudadores = []),
+              this.$notification.warning(
+                "No se ha encontrado ninguna Recaudador a la que pueda habilitar."
+              );
+            this.loading = false;
+            this.$Progress.finish();
+            return;
+          }
+          this.lstRecaudadores = r.data.result;
+          //Obtener solo Activos y creados
+          this.lstRecaudadores = this.lstRecaudadores.filter((rec) => {
+            return (rec.estado == 'ACTIVO' || rec.estado == 'CREADO');
+          });
+          this.loading = false;
+          this.$Progress.finish();
+        })
+        .catch((error) => {
+          this.lstRecaudadores = [];
+          this.$notification.error(
+            error.response.data.message,
+            error.response.data.code
+          );
+          this.loading = false;
+          this.$Progress.fail();
+        });
+    },
+    abrirRecaudador() {
+      this.$confirm({
+        title: "¿Está seguro de ingresar a Registro de Recaudadores?",
+        content: "Considere que los datos se perderán.",
+        okText: "Aceptar",
+        cancelText: "Cancelar",
+        onOk: () => {
+          this.$router.push({
+            name: "AbmRecaudadores",
+          });
+        },
+        onCancel() {
+        },
+        class: "test",
+      });
+    },
+  },
+};
+</script>
