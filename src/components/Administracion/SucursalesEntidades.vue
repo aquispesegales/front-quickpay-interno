@@ -23,7 +23,7 @@
               <a-col :xs="24" :sm="24" :md="24" :lg="20" :xl="20" align="right">
                  <a-input-search
             v-model="search"
-            placeholder="Buscar por nombre..."
+            placeholder="Buscar por nombreeeeee..."
             @search="filterTable"
             enter-button=" Buscar "
             :maxLength="50"
