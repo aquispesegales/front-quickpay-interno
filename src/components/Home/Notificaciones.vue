@@ -1,6 +1,6 @@
 <template>
   <div style="background-color: #fff !important">
-    <a-alert message="Dosificaciones a punto de vencer" type="info" show-icon />
+    <!--<a-alert message="Dosificaciones a punto de vencer" type="info" show-icon />
     <a-table
       :columns="columnsDosificacion"
       :data-source="lstDosificaciones"
@@ -8,7 +8,7 @@
       :loadingDosif="loadingDosif"
       size="small"
       :pagination="pagination"
-    >
+    >-->
       <template slot="fechaLimite" slot-scope="text, record">
         {{ $dates.formaDateWithoutTime(record.fechaLimiteEmision) }}
       </template>
