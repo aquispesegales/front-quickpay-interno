@@ -1,6 +1,6 @@
 <template>
   <a-layout-footer class="pie">
-    Tesla Design ©2021 Created by Exacta
+    QuickPay 2024
   </a-layout-footer>
 </template>
 <style scoped>
