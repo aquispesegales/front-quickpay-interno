@@ -205,13 +205,13 @@ const columnCobroEmpresa = [
         key: "sucursalEmpresa",
         width: "100px",
     },
-    {
+    /*{
         title: "Nombre Socio",
         dataIndex: "nombreSocio",
         key: "nombreSocio",
         width: "200px",
         scopedSlots: { customRender: "nombreSocio" },
-    },
+    },*/
     {
         title: "Tipo de Servicio",
         dataIndex: "tipoServicio",
@@ -234,6 +234,13 @@ const columnCobroEmpresa = [
         width: "100px",
     },
     {
+        title: "Nro. Factura",
+        dataIndex: "nroFactura",
+        key: "nroFactura",
+        width: "100px",
+    },
+    
+    {
         title: "Fecha de Cobro",
         dataIndex: "fechaCobro",
         key: "fechaCobro",
@@ -249,6 +256,14 @@ const columnCobroEmpresa = [
         width: "100px",
 
     },
+    {
+        title: " Método Cobro ",
+        dataIndex: "metodoCobro",
+        key: "metodoCobro",
+        width: "100px",
+
+    },
+    
     /*{
         title: "Comisión Empresa",
         key: "comisionEmpresa",

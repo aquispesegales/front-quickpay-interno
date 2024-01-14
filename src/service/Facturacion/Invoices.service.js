@@ -57,7 +57,7 @@ export default {
   },*/
 
   postLibroVentasReport(facturaObj) {
-    return Api().post(`api/facturas/librosventas`, facturaObj, {
+    return Api().post(`api/facturas/libroVentasJasper`, facturaObj, {
       responseType: 'arraybuffer',
       headers: {
         'Accept': 'application/pdf',

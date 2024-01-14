@@ -366,6 +366,7 @@
 
     <!-- MODAL PARA ASIGNAR ROLES -->
     <a-modal v-model="visibleModalRoles" title="ASIGNACIÓN DE ROLES" :dialog-style="{ top: '20px' }" :width="700">
+         
       <a-row v-if="this.subModulo == 'ADMIN'">
         <a-col type="flex" justify="space-around" align="middle">
           <a-form :label-col="{ span: 7 }" :wrapper-col="{ span: 17 }">
@@ -385,6 +386,7 @@
             @selectChange="handleSelectChange" :list-style="{
               width: '300px',
             }" />
+       
         </a-col>
       </a-row>
       <template slot="footer">
@@ -726,6 +728,9 @@ export default {
       this.privilegiosKey = nextTargetKeys;
     },
     handleSelectChange(sourceSelectedKeys, targetSelectedKeys) {
+      console.log("seleccioanndo")
+      console.log(sourceSelectedKeys)
+      console.log(targetSelectedKeys)
       this.selectedKeys = [...sourceSelectedKeys, ...targetSelectedKeys];
     },
     handleScroll(direction, e) { },

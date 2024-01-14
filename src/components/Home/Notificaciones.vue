@@ -1,6 +1,6 @@
 <template>
   <div style="background-color: #fff !important">
-    <a-alert message="Dosificaciones a punto de vencer" type="info" show-icon />
+    <!--<a-alert message="Dosificaciones a punto de vencer" type="info" show-icon />-->
     <a-table
       :columns="columnsDosificacion"
       :data-source="lstDosificaciones"

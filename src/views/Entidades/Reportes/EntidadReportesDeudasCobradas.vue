@@ -264,25 +264,26 @@ const columns = [
     width: "8%",
   },
   {
+    title: "Metodo Cobro",
+    dataIndex: "metodoCobro",
+    key: "metodoCobro",
+    width: "10%",
+  },
+  {
     title: "Cód. Cliente",
     dataIndex: "codigoCliente",
     key: "codigoCliente",
     width: "10%",
     align: "center",
   },
+  //http://localhost:9080/api/ReportEntidad/findDeudasByParameter
+  {
+    title: "Nro Factura",
+    dataIndex: "nroFactura",
+    key: "nroFactura",
+    width: "5%",
+  },
 
-  {
-    title: "Nombre Recaudadora",
-    dataIndex: "nombreRecaudadora",
-    key: "nombreRecaudadora",
-    width: "15%",
-  },
-  {
-    title: "Metodo Cobro",
-    dataIndex: "metodoCobro",
-    key: "metodoCobro",
-    width: "10%",
-  },
   
   {
     title: "Fecha Cobro",

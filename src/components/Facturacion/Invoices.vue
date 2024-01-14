@@ -10,6 +10,7 @@
           color: #21618c;
         ">
         <a-row type="flex" justify="space-around" align="middle"><a-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
+          
             <h2><b style="color: #21618c"><a-icon type="arrow-left" @click="$router.back()" v-if="entidadId != null" />
                 {{ title }} </b></h2>
           </a-col>
@@ -380,7 +381,7 @@
         <a-col>
           <a-radio-group button-style="solid" v-model="facturaObj.formatFile">
             <a-radio-button value="pdf"> PDF </a-radio-button>
-            <a-radio-button value="msword"> WORD </a-radio-button>
+            <!--<a-radio-button value="msword"> WORD </a-radio-button>-->
             <a-radio-button value="msexcel"> EXCEL </a-radio-button>
           </a-radio-group>
         </a-col>
@@ -749,11 +750,18 @@ export default {
     generarLibroVentas() {
       this.$refs.ruleForm.validate((valid) => {
         if (valid) {
+          let obj = {
+            entidadId:0,
+            tituloReporte:'LIBRO DE VENTAS',
+            tituloEntidad:'ENTIDAD',
+            fechaInicio:'',
+            fechaFin:'',
+            export:this.facturaObj.formatFile
+          };
           if (this.facturaObj.formatFile != null) {
             this.mensajeVisible = false;
-            this.link = null;
             this.viewCargando = true;
-            Invoices.postLibroVentasReport(this.facturaObj)
+            Invoices.postLibroVentasReport(obj)
               .then((r) => {
                 this.viewCargando = false;
                 if (r.status == 200) {

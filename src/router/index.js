@@ -33,7 +33,7 @@ import RegistroPersona from "../components/Administracion/RegistroPersona";
 import RecaudacionReporteCajero from '../views/Recaudaciones/Reportes/RecaudacionReporteCajero.vue';
 
 import GenerateCodigoControl from "../views/Administracion/GenerateCodigoControl";
-import LibroVentas from "../views/Entidades/Facturacion/LibroVentas";
+import LibroVentas from "../views/Entidades/Facturacion/LibroVentas.vue";
 import ReimpresionFacturas from "../views/Entidades/Facturacion/Reimpresion";
 import AnulacionFacturas from "../views/Entidades/Facturacion/Anulacion";
 

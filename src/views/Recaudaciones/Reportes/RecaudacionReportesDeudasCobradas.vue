@@ -255,12 +255,12 @@ const columns = [
     align: "center",
   },
 
-  /*{
-    title: "Nombre Recaudadora",
-    dataIndex: "nombreRecaudadora",
-    key: "nombreRecaudadora",
-    width: "20%",
-  },*/
+  {
+    title: "Nro Factura",
+    dataIndex: "nroFactura",
+    key: "nroFactura",
+    width: "5%",
+  },
   {
     title: "Fecha Cobro",
     dataIndex: "fechaCreacion",
