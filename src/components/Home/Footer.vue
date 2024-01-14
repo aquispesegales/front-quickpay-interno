@@ -1,6 +1,6 @@
 <template>
   <a-layout-footer class="pie">
-    Quick Pay 2024
+    Quick Pay 2024.
   </a-layout-footer>
 </template>
 <style scoped>
