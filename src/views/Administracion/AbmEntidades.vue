@@ -115,6 +115,14 @@
           </a-row>
           <a-row type="flex">
             <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="10" class="labelTittle">
+              Sub Dominio Empresa
+            </a-col>
+            <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="14" class="labelValue">
+              {{ record.subdominioEmpresa }}
+            </a-col>
+          </a-row>
+          <a-row type="flex">
+            <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="10" class="labelTittle">
               Dirección
             </a-col>
             <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="14" class="labelValue">
@@ -232,6 +240,9 @@
         </a-form-model-item>
         <a-form-model-item ref="nombreComercial" label="Nombre Comercial" prop="nombreComercial">
           <a-input v-model="entidadObj.nombreComercial" :disabled="disabledNombreComercial" :maxLength="200" />
+        </a-form-model-item>
+        <a-form-model-item ref="subdominioEmpresa" label="SubDominio Empresa" prop="subdominioEmpresa">
+          <a-input v-model="entidadObj.subdominioEmpresa" :disabled="disabledSubDominioEmpresa" :maxLength="200" />
         </a-form-model-item>
         <a-form-model-item ref="direccion" label="Dirección" prop="direccion">
           <a-input v-model="entidadObj.direccion" @blur="() => {
