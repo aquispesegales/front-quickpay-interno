@@ -1,8 +1,10 @@
 <template>
-  <div class="limiter">
-    <div class="container-login100">
+  <div class="limiter" >
+    <div class="container-login100" >
+      
       <div class="wrap-login100">
 
+       
         <div
           class="login100-form-title"
           v-bind:style="{
@@ -10,8 +12,12 @@
               'url(' + require('../../assets/images/logo.png') + ')',
           }"
         ></div>
-
+        
         <form class="login100-form">
+           <!-- solo para qas-->
+          <img src="@/assets/images/no_valid.jpg" alt="no valido" width="200" height="50">
+          <!-- =============== -->
+
           <div
             class="wrap-input100 validate-input m-b-26"
             data-validate="Username is required"
@@ -40,6 +46,7 @@
             <a-button type="primary" @click="login" style="width: 100%">
               Login
             </a-button>
+            
           </div>
           <div
             wrap-input100

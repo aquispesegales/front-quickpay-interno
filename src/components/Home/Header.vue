@@ -1,6 +1,8 @@
 <template>
   <a-layout-header style="padding-left: 0px; padding-right: 5px; height:auto">
     <a-row type="flex" justify="end" align="top">
+
+
       <a-col
         :span="24"
         style="
@@ -11,6 +13,9 @@
         "
       >
         <div>
+
+   
+
          <!-- SIN
           <a-badge
             count="."

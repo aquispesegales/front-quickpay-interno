@@ -23,3 +23,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 # front-quickpay
+
+
+Login.vue ==>  cambiar  logo qas
+Sidebar ==>  cambiar  logo qas

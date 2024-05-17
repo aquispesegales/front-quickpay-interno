@@ -1,13 +1,9 @@
 <template>
 
-  <a-layout-sider
-    v-model="collapsed"
-    collapsible
-    style="width: 256px"
-    theme="dark"
-
-  >
-
+  <a-layout-sider v-model="collapsed" collapsible style="width: 256px" theme="dark">
+    <!-- solo para qas-->
+    <img src="@/assets/images/no_valid.jpg" alt="no valido" width="200" height="50">
+    <!-- =============== -->
     <br />
     <a-row type="flex" justify="space-around" align="middle">
       <a-col>
@@ -16,38 +12,23 @@
         <br />
         <!--logo_quickpay-->
         <div @click="navegar('index')">
-          <img
-            src="../../../public/logo_quickpay.jpg"
-            v-if="!collapsed"
-            style="padding-bottom: 5px"
-            width="180"
-            height="100"
-
-          />
-
+          <img src="../../../public/logo_quickpay.jpg" v-if="!collapsed" style="padding-bottom: 5px" width="180"
+            height="100" />
         </div>
-
         <!--<hr />-->
         <div style="height: 100px" v-if="collapsed"></div>
       </a-col>
     </a-row>
     <br />
 
-    <div v-if="!collapsed && datos.nombreEntidad!='ADMINISTRADOR'"  class="entiades">
+    <div v-if="!collapsed && datos.nombreEntidad != 'ADMINISTRADOR'" class="entiades">
       {{ datos.nombreEntidad }}
     </div>
-    <a-divider v-if="!collapsed" style="color: #fff; font-size: 10px;" >
+    <a-divider v-if="!collapsed" style="color: #fff; font-size: 10px;">
       {{ datos.modulo }}
     </a-divider>
 
-    <a-menu
-      theme="dark"
-      breakpoint="xl"
-      :default-selected-keys="['0']"
-      mode="inline"
-      collapsedWidth="150"
-
-    >
+    <a-menu theme="dark" breakpoint="xl" :default-selected-keys="['0']" mode="inline" collapsedWidth="150">
       <!--<a-menu-item >
         <a-icon type='home' @click="navegar('index')" />
         <span @click="navegar('index')">
@@ -61,13 +42,8 @@
         </span>
       </a-menu-item>
       <a-sub-menu v-for="men in subMenuList" :key="men.privilegiosId">
-        <span slot="title"
-          ><a-icon :type="men.icono" /><span> {{ men.descripcion }}</span></span
-        >
-        <a-menu-item
-          v-for="subMenu in men.segPrivilegioEntityList"
-          :key="subMenu.privilegiosId"
-        >
+        <span slot="title"><a-icon :type="men.icono" /><span> {{ men.descripcion }}</span></span>
+        <a-menu-item v-for="subMenu in men.segPrivilegioEntityList" :key="subMenu.privilegiosId">
           <span @click="navegar(subMenu.link)">
             {{ subMenu.descripcion }}
           </span>
@@ -145,6 +121,7 @@ export default {
   border-style: double;
   border-color: #f5962a;
 }
+
 #components-layout-demo-responsive .logo {
   height: 32px;
   background: rgba(255, 255, 255, 0.2);

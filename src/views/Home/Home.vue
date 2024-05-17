@@ -1,11 +1,10 @@
 <template>
   <a-layout id="components-layout-demo-side" style="min-height: 100vh">
-
+  
     <a-layout>
       <Sidebar />
       <a-layout>
         <Header />
-
         <a-layout-content style="margin: 0 16px; background-color: #fcfafa">
           <router-view> </router-view>
         </a-layout-content>
