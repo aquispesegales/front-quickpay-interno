@@ -68,4 +68,7 @@ prepros-6.config
 prepros.config
 
 
+
 otros.txt
+*.development
+*.production
