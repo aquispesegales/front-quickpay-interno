@@ -2,7 +2,7 @@
 
   <a-layout-sider v-model="collapsed" collapsible style="width: 256px" theme="dark">
     <!-- solo para qas-->
-    <img src="@/assets/images/no_valid.jpg" alt="no valido" width="200" height="50">
+    <!--<img src="@/assets/images/no_valid.jpg" alt="no valido" width="200" height="50">-->
     <!-- =============== -->
     <br />
     <a-row type="flex" justify="space-around" align="middle">

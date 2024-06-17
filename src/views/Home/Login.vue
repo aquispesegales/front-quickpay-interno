@@ -15,7 +15,7 @@
         
         <form class="login100-form">
            <!-- solo para qas-->
-          <img src="@/assets/images/no_valid.jpg" alt="no valido" width="200" height="50">
+          <!--<img src="@/assets/images/no_valid.jpg" alt="no valido" width="200" height="50">-->
           <!-- =============== -->
 
           <div
